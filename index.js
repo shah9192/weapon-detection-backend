@@ -22,6 +22,9 @@ app.use(
 );
 
 // mongoose.connect('mongodb://localhost:27017/Users', { useNewUrlParser: true, useUnifiedTopology: true })
+app.get('/', (req, res) => {
+  res.json({ status: 'Backend is running' });
+});
 mongoose
   .connect(
     "mongodb+srv://adeeltechpro_db_user:VDUv4DZ6w4tcIMjs@cluster0.vbbo82a.mongodb.net/?appName=Cluster0",
