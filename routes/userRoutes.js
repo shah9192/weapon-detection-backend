@@ -89,5 +89,24 @@ router.post('/update-profile-picture', async (req, res) => {
     res.status(500).json({ message: 'Error updating profile picture', error: err.message });
   }
 });
+router.post("/save-token", verifyToken, async (req, res) => {
+  try {
+    const { fcmToken } = req.body;
 
+    if (!fcmToken || typeof fcmToken !== "string") {
+      return res.status(400).json({ error: "Valid FCM token is required" });
+    }
+
+    await UsersModel.findByIdAndUpdate(req.userId, { fcmToken }, { new: true });
+
+    res.json({
+      success: true,
+      message: "FCM token saved successfully",
+    });
+  } catch (err) {
+    console.error("Save FCM token error:", err);
+    res.status(500).json({ error: "Failed to save token" });
+  }
+});
 module.exports = router;
+

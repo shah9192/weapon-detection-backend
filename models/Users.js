@@ -33,6 +33,11 @@ const UsersSchema = new mongoose.Schema(
       type: String, 
       default: '/path/to/default/avatar.png' // Set a default avatar path if not provided
     },
+    fcmToken: {
+      type: String,
+      default: null,
+      sparse: true,
+    },
     resetPasswordToken: { type: String },  // Field to store the reset password token
     resetPasswordExpire: { type: Date },   // Field to store when the reset password token expires
   },
