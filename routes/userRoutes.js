@@ -89,7 +89,7 @@ router.post('/update-profile-picture', async (req, res) => {
     res.status(500).json({ message: 'Error updating profile picture', error: err.message });
   }
 });
-router.post("/save-token", async (req, res) => {
+router.post("/save-token", verifyToken, async (req, res) => {
   try {
     const { fcmToken } = req.body;
 

@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 });
 mongoose
   .connect(
-    "mongodb+srv://adeeltechpro_db_user:VDUv4DZ6w4tcIMjs@cluster0.vbbo82a.mongodb.net/?appName=Cluster0",
+    "mongodb+srv://adeeltechpro_db_user:VDUv4DZ6w4tcIMjs@cluster0.vbbo82a.mongodb.net/test?appName=Cluster0",
     { useUnifiedTopology: true }
   )
   .then(() => console.log("Connected to MongoDB"))
