@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:5173", // Frontend URL (adjust as needed)
+    origin: "*", // Frontend URL (adjust as needed)
     // methods: 'GET,POST,PUT,DELETE',
     // allowedHeaders: 'Content-Type, Authorization',
     credentials: true, // Allow cookies (including admin token)
